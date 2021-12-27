@@ -1,5 +1,6 @@
 package com.example.springboot;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import org.springframework.boot.CommandLineRunner;
@@ -10,9 +11,10 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Application {
-
-	public static void main(String[] args) {
+	public static FunctionsManager functionsManager = new FunctionsManager();
+	public static void main(String[] args) throws IOException {
 		SpringApplication.run(Application.class, args);
+		functionsManager.start();
 	}
 
 	@Bean
